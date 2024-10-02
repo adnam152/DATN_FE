@@ -1,6 +1,6 @@
 
-import Header from '../../components/common/Header'
-import Footer from '../../components/common/Footer'
+import Header from '../../components/common/Header/Header'
+import Footer from '../../components/common/Footer/Footer'
 import NewArrival from '../../components/home/NewArrival'
 
 function HomePage() {
