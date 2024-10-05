@@ -25,13 +25,13 @@ function LoginForm() {
             Continue with Google
           </div>
 
-          <a href="#" className="text-[#363377] py-6">Quên mật khẩu?</a>
+          <Link href="#" className="text-[#363377] py-6">Quên mật khẩu?</Link>
         </form>
         <hr className="border-t border-gray-400 my-6" />
         <div className="flex justify-between items-center">
-          <a href="#" className="text-[#363377]">Chưa có tài khoản?</a>
+          <Link href="#" className="text-[#363377]">Chưa có tài khoản?</Link>
           <button className="bg-white text-black text-sm py-2 px-5 rounded-lg">
-            <a href='#'>Đăng ký</a>
+            <Link href='#'>Đăng ký</Link>
           </button>
         </div>
       </div>

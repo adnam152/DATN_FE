@@ -39,7 +39,7 @@ function RegisterForm() {
                 <div className="flex justify-between items-center">
                     <span className=" text-[#363377]">Bạn đã có tài khoản?</span>
                     <button className="bg-white text-[#363377] text-sm py-2 px-5 rounded-lg ">
-                        <a href='#'>Đăng nhập</a>
+                        <Link href='#'>Đăng nhập</Link>
                     </button>
                 </div>
             </div>
