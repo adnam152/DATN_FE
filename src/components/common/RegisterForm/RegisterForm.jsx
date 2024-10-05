@@ -18,13 +18,13 @@ function RegisterForm() {
                     <div className="relative">
                         <input type="password" placeholder="Mật khẩu" className="w-full mb-6 p-3 border border-gray-700 rounded-lg text-sm bg-white" />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer">
-                            <i className="fa-solid fa-eye-slash text-gray-400"></i>
+                            <i className="fa-solid fa-eye-slash text-gray-400 mb-8"></i>
                         </span>
                     </div>
                     <div className="relative">
                         <input type="password"  placeholder="Xác nhận mật khẩu" className="w-full mb-6 p-3 border border-gray-700 rounded-lg text-sm bg-white" />
                         <span className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer">
-                            <i className="fa-solid fa-eye-slash text-gray-400"></i>
+                            <i className="fa-solid fa-eye-slash text-gray-400 mb-8"></i>
                         </span>
                     </div>
 
