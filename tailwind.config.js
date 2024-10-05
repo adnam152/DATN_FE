@@ -9,6 +9,10 @@ export default {
       width: {
         '128': '32rem',
       },
+      colors:{
+        'custom-red':'#F33535',
+        'light-gray':'#F6F6F6'
+      }
     },
   },
   plugins: [
