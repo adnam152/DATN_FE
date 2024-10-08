@@ -1,0 +1,21 @@
+/* Tùy chỉnh thanh cuộn cho tất cả các phần tử */
+*{
+    scrollbar-color:unset;
+}
+::-webkit-scrollbar {
+    width: 14px !important; /* Độ rộng của thanh cuộn */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1 !important; /* Màu nền của thanh cuộn */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888 !important; /* Màu của tay cầm thanh cuộn */
+    border-radius: 10px; /* Bo tròn tay cầm */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555 !important; /* Màu tay cầm khi hover */
+}
+
