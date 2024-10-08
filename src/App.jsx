@@ -1,6 +1,7 @@
 import './index.css';
 import { Routes, Route } from 'react-router'
 import HomePage from './pages/user/HomePage'
+import AllProduct from './pages/user/AllProduct';
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     <Routes>
       {/* Giao diện người dùng */}
       <Route path='/' element={<HomePage />} />
-      <Route path='/danh-muc/:slug' element={<HomePage />} />
+      <Route path='/danh-muc/:slug' element={<AllProduct />} />
       <Route path='/san-pham/:slug' element={<HomePage />} />
       <Route path='/gio-hang' element={<HomePage />} />
       <Route path='/thanh-toan' element={<HomePage />} />

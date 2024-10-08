@@ -11,7 +11,8 @@ export default {
       },
       colors:{
         'custom-red':'#F33535',
-        'light-gray':'#F6F6F6'
+        'light-gray':'#F6F6F6',
+        'custom-cyan':'#E0EFFB'
       }
     },
   },
