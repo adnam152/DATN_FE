@@ -1,6 +1,6 @@
 
 
-const Header = () => {
+function Header() {
     return (
         <header className="flex justify-between items-center py-4 px-10 border-b border-gray-200 shadow-md bg-white">
             {/* Logo */}

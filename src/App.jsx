@@ -1,6 +1,7 @@
 import './index.css';
 import { Routes, Route } from 'react-router'
 import HomePage from './pages/user/HomePage'
+import Cart from './pages/Cart/Cart';
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
       <Route path='/' element={<HomePage />} />
       <Route path='/danh-muc/:slug' element={<HomePage />} />
       <Route path='/san-pham/:slug' element={<HomePage />} />
-      <Route path='/gio-hang' element={<HomePage />} />
+      <Route path='/gio-hang' element={<Cart />} />
       <Route path='/thanh-toan' element={<HomePage />} />
       <Route path='/ca-nhan' element={<HomePage />}>
         <Route path='' element={<HomePage />} />
