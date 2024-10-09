@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router'
 import HomePage from './pages/user/HomePage'
 import LoginForm from './components/common//LoginForm/LoginForm'
 import RegisterForm from './components/common/RegisterForm/RegisterForm';
-
+import Detail from './components/home/Detail';
 function App() {
 
   return (
@@ -12,6 +12,7 @@ function App() {
       <Route path='/' element={<HomePage />} />
       <Route path='/login' element={<LoginForm />} />
       <Route path='/register' element={<RegisterForm />} />
+      <Route path='/detail' element={<Detail />} />
       <Route path='/danh-muc/:slug' element={<HomePage />} />
       <Route path='/san-pham/:slug' element={<HomePage />} />
       <Route path='/gio-hang' element={<HomePage />} />
