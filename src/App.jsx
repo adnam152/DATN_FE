@@ -2,6 +2,11 @@ import './index.css';
 import { Routes, Route } from 'react-router'
 import HomePage from './pages/user/HomePage'
 import Checkout from './pages/user/Checkout';
+import Cart from './pages/Cart/Cart';
+import AllProduct from './pages/user/AllProduct';
+import LoginForm from './components/common/AuthForm/AuthForm'
+import RegisterForm from './components/common/RegisterForm/RegisterForm';
+import Detail from './components/home/Detail';
 
 function App() {
 
@@ -9,9 +14,13 @@ function App() {
     <Routes>
       {/* Giao diện người dùng */}
       <Route path='/' element={<HomePage />} />
+      <Route path='/danh-muc/:slug' element={<AllProduct />} />
+      <Route path='/login' element={<LoginForm />} />
+      <Route path='/register' element={<RegisterForm />} />
+      <Route path='/detail' element={<Detail />} />
       <Route path='/danh-muc/:slug' element={<HomePage />} />
       <Route path='/san-pham/:slug' element={<HomePage />} />
-      <Route path='/gio-hang' element={<HomePage />} />
+      <Route path='/gio-hang' element={<Cart />} />
       <Route path='/thanh-toan' element={<Checkout />} />
       <Route path='/ca-nhan' element={<HomePage />}>
         <Route path='' element={<HomePage />} />
