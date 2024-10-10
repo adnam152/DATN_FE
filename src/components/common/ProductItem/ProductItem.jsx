@@ -3,7 +3,7 @@ import React from 'react';
 function ProductItem() {
   return (
     
-    <div className="product-item rounded-lg shadow-md p-4">
+    <div className="product-item rounded-lg shadow-md p-4 w-60">
       <div className=" product-img relative">
         <img
           src="https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317" />
