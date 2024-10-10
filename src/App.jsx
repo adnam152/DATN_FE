@@ -1,6 +1,7 @@
 import './index.css';
 import { Routes, Route } from 'react-router'
 import HomePage from './pages/user/HomePage'
+import AllProduct from './pages/user/AllProduct';
 import LoginForm from './components/common/AuthForm/AuthForm'
 import RegisterForm from './components/common/RegisterForm/RegisterForm';
 
@@ -10,6 +11,7 @@ function App() {
     <Routes>
       {/* Giao diện người dùng */}
       <Route path='/' element={<HomePage />} />
+      <Route path='/danh-muc/:slug' element={<AllProduct />} />
       <Route path='/login' element={<LoginForm />} />
       <Route path='/register' element={<RegisterForm />} />
       <Route path='/danh-muc/:slug' element={<HomePage />} />
