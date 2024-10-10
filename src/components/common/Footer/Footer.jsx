@@ -52,12 +52,7 @@ function Footer() {
             <p className="p-1 mt-1 font-semibold text-base italic">Chính sách bảo mật</p>
             <p className="p-1 mt-1 font-semibold text-base italic">Chính sách đổi trả</p>
           </div>
-          <img
-            alt="Map showing the location of the address mentioned"
-            src="https://toquoc.mediacdn.vn/280518851207290880/2022/10/31/tfisg1c-166720423465128148766.png"
-            className="border border-gray-300"
-            style={{ width: '400px', height: '200px' }}
-          />
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14899.141320824117!2d105.79380725!3d21.001240550000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1727967770357!5m2!1svi!2s" loading="lazy" className="w-96 h-64 p-4" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div className="grid grid-cols-2 w-full items-end">
           {/* Đăng ký mail */}
