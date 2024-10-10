@@ -1,7 +1,7 @@
 import './index.css';
 import { Routes, Route } from 'react-router'
 import HomePage from './pages/user/HomePage'
-import LoginForm from './components/common//LoginForm/LoginForm'
+import LoginForm from './components/common/AuthForm/AuthForm'
 import RegisterForm from './components/common/RegisterForm/RegisterForm';
 
 function App() {
