@@ -24,7 +24,9 @@ function Footer() {
         </p>
         <div className="flex mt-4 space-x-6">
           <a href="#">
-            <i className="fa-brands fa-square-instagram text-3xl" style={{color: '#dc2626'}}></i>
+            <i className="fa-brands fa-square-instagram text-3xl" style={{color: '#dc2626'
+              
+            }}></i>
           </a>
           <a href="#">
             <i className="fa-brands fa-square-facebook text-3xl" style={{ color: '#1877F2' }}></i>
