@@ -1,10 +1,12 @@
 import './index.css';
 import { Routes, Route } from 'react-router'
 import HomePage from './pages/user/HomePage'
+import Cart from './pages/Cart/Cart';
 import AllProduct from './pages/user/AllProduct';
 import LoginForm from './components/common/AuthForm/AuthForm'
 import RegisterForm from './components/common/RegisterForm/RegisterForm';
 import Detail from './components/home/Detail';
+
 function App() {
 
   return (
@@ -17,7 +19,7 @@ function App() {
       <Route path='/detail' element={<Detail />} />
       <Route path='/danh-muc/:slug' element={<HomePage />} />
       <Route path='/san-pham/:slug' element={<HomePage />} />
-      <Route path='/gio-hang' element={<HomePage />} />
+      <Route path='/gio-hang' element={<Cart />} />
       <Route path='/thanh-toan' element={<HomePage />} />
       <Route path='/ca-nhan' element={<HomePage />}>
         <Route path='' element={<HomePage />} />
