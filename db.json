@@ -1,0 +1,101 @@
+{
+    "products": {
+        "status": "success",
+        "message": "Products retrieved successfully",
+        "data": [
+            {
+                "id": 1,
+                "name": "Product 1",
+                "selling_price": 1000,
+                "rating": 4,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            },
+            {
+                "id": 2,
+                "name": "Product 2",
+                "selling_price": 2000,
+                "rating": 3,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            },
+            {
+                "id": 3,
+                "name": "Product 3",
+                "selling_price": 3000,
+                "rating": 5,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            },
+            {
+                "id": 4,
+                "name": "Product 4",
+                "selling_price": 4000,
+                "rating": 2,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            },
+            {
+                "id": 5,
+                "name": "Product 5",
+                "selling_price": 5000,
+                "rating": 1,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            },
+            {
+                "id": 6,
+                "name": "Product 6",
+                "selling_price": 6000,
+                "rating": 4,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            },
+            {
+                "id": 7,
+                "name": "Product 7",
+                "selling_price": 7000,
+                "rating": 3,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            },
+            {
+                "id": 8,
+                "name": "Product 8",
+                "selling_price": 8000,
+                "rating": 5,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            },
+            {
+                "id": 9,
+                "name": "Product 9",
+                "selling_price": 9000,
+                "rating": 2,
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            }
+        ]
+    },
+    "product_details": {
+        "status": "success",
+        "message": "Product details retrieved successfully",
+        "data": {
+            "id": 1,
+            "name": "Product 1",
+            "catalogue_name":"Giày thể thao",
+            "brand_name":"Nike",
+            "sku" : "H019508",
+            "slug": "product-1",
+            "selling_price": 1200000,
+            "discount_price": 999000,
+            "rating": 4,
+            "rating_count": 100,
+            "is_wish": false,
+            "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+            "short_description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, quidolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex.",
+            "description": "<div class=''><h2 class='text-black font-bold text-xl mb-4'>NHỮNG ĐÔI GIÀY CHẠY BỘ NÀY ĐƯỢC LÀM MỘT PHẦN BẰNG VẬT LIỆU TÁI CHẾ.</h2></div><div class='mb-10 '><p class='mb-4 text-[16px] text-black   leading-[1.7] '>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex.</p><p class='mb-4 text-[16px] text-black leading-[1.7]'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex.</p></div><div class='w-full pb-[40px]'><h3 class='font-bold text-[25px] text-lg mb-2 text-black text-left'>Mô tả chi tiết</h3><ul class='list-disc list-inside text-black text-left text-[16px]'><li>Vừa vặn thông thường</li><li>Dáng ôm</li><li>Thân trên bằng vải adidas PRIMEKNIT+FORGED</li><li>Lớp lót dệt</li><li>Đế giữa BOOST mềm</li><li>Đế ngoài cao su Continental™</li><li>Trọng lượng: 299 gram (kích thước UK 8.5)</li><li>Độ dốc đế giữa: 10 mm (gót chân: 30 mm / bàn chân trước: 20 mm)</li><li>Chứa ít nhất 20% nội dung tái chế</li></ul></div>",
+            "attributes" : {
+                "size": ["36", "37", "38", "39", "40"],
+                "color": ["#000000", "#ffffff", "#ff0000", "#00ff00", "#0000ff"]
+            },
+            "medias": [
+                "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+                "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+                "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+                "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+            ]
+        }
+    }
+}
