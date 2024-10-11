@@ -8,63 +8,45 @@
                 "name": "Product 1",
                 "selling_price": 1000,
                 "rating": 4,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+                "created_at": "2021-09-01T00:00:00.000Z",
+                "updated_at": "2021-09-01T00:00:00.000Z"
             },
             {
                 "id": 2,
                 "name": "Product 2",
                 "selling_price": 2000,
                 "rating": 3,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+                "created_at": "2021-09-01T00:00:00.000Z",
+                "updated_at": "2021-09-01T00:00:00.000Z"
             },
             {
                 "id": 3,
                 "name": "Product 3",
                 "selling_price": 3000,
                 "rating": 5,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+                "created_at": "2021-09-01T00:00:00.000Z",
+                "updated_at": "2021-09-01T00:00:00.000Z"
             },
             {
                 "id": 4,
                 "name": "Product 4",
                 "selling_price": 4000,
                 "rating": 2,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+                "created_at": "2021-09-01T00:00:00.000Z",
+                "updated_at": "2021-09-01T00:00:00.000Z"
             },
             {
                 "id": 5,
                 "name": "Product 5",
                 "selling_price": 5000,
                 "rating": 1,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
-            },
-            {
-                "id": 6,
-                "name": "Product 6",
-                "selling_price": 6000,
-                "rating": 4,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
-            },
-            {
-                "id": 7,
-                "name": "Product 7",
-                "selling_price": 7000,
-                "rating": 3,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
-            },
-            {
-                "id": 8,
-                "name": "Product 8",
-                "selling_price": 8000,
-                "rating": 5,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
-            },
-            {
-                "id": 9,
-                "name": "Product 9",
-                "selling_price": 9000,
-                "rating": 2,
-                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317"
+                "thumbnail": "https://bizweb.dktcdn.net/100/347/923/products/568497c-6.jpg?v=1597673112317",
+                "created_at": "2021-09-01T00:00:00.000Z",
+                "updated_at": "2021-09-01T00:00:00.000Z"
             }
         ]
     },
