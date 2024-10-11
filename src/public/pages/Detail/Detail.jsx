@@ -1,10 +1,7 @@
-import Header from "../common/Header/Header"
-import Footer from "../common/Footer/Footer"
 
 function Detail() {
     return (
         <div className="container mx-auto px-4">
-            <Header />
             <div className="main-content my-8 bg-white  ">
                 {/* Box1  */}
                 <div className="product-image flex  rounded-lg  mx-auto max-w-[1330px]  mb-[50px]  ">
@@ -31,11 +28,11 @@ function Detail() {
                         </div>
                         <div className="rating mb-[15px] p-[0px_23px_0px_23px] ">
                             <div className="">
-                                <i class=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
-                                <i class=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
-                                <i class=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
-                                <i class=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
-                                <i class=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
+                                <i className=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
+                                <i className=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
+                                <i className=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
+                                <i className=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
+                                <i className=" mr-[2px] text-[#FFD233] fa-solid fa-star"></i>
                             </div>
 
                             <p className="ml-[10px]">59 người đánh giá</p>
@@ -88,11 +85,11 @@ function Detail() {
                         <div className="flex flex-wrap font-bold mb-[15px] gap-5 p-[0px_23px_0px_23px] mb-[10px]">
                             <button className="buy-now bg-[#FFAE10]  text-white px-4 py-[11px] rounded">Mua ngay</button>
                             <button className="add-to-cart bg-[#317EC5] text-white px-5 py-2 rounded">
-                                <i class="fa-solid fa-cart-shopping mr-[10px]"></i>
+                                <i className="fa-solid fa-cart-shopping mr-[10px]"></i>
                                 Thêm vào giỏ
                             </button>
                             <button className="add-to-wishlist border bg-[#F33535] text-white border-gray-300 px-5 py-2 rounded">
-                                <i class="fa-regular fa-heart mr-[10px]"></i>
+                                <i className="fa-regular fa-heart mr-[10px]"></i>
                                 Yêu thích
                             </button>
                         </div>
@@ -182,7 +179,6 @@ function Detail() {
                 </div>
 
             </div>
-            <Footer />
         </div>
     )
 }

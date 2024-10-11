@@ -1,36 +1,19 @@
 import './index.css';
-import { Routes, Route } from 'react-router'
-import HomePage from './pages/user/HomePage'
-import Checkout from './pages/user/Checkout';
-import Cart from './pages/Cart/Cart';
-import AllProduct from './pages/user/AllProduct';
-import LoginForm from './components/common/AuthForm/AuthForm'
-import RegisterForm from './components/common/RegisterForm/RegisterForm';
-import Detail from './components/home/Detail';
+import { Routes, Route } from 'react-router';
+import PublicLayout from './public/PublicLayout';
+// import AdminLayout from './admin/AdminLayout';
+import Home from './public/pages/Home/Home';
+import AllProduct from './public/pages/AllProduct/AllProduct';
+import Detail from './public/pages/Detail/Detail';
+import Cart from './public/pages/Cart/Cart';
+import Checkout from './public/pages/Checkout/Checkout';
 
 function App() {
 
   return (
     <Routes>
-      {/* Giao diện người dùng */}
-      <Route path='/' element={<HomePage />} />
-      <Route path='/danh-muc/:slug' element={<AllProduct />} />
-      <Route path='/login' element={<LoginForm />} />
-      <Route path='/register' element={<RegisterForm />} />
-      <Route path='/detail' element={<Detail />} />
-      <Route path='/danh-muc/:slug' element={<HomePage />} />
-      <Route path='/san-pham/:slug' element={<HomePage />} />
-      <Route path='/gio-hang' element={<Cart />} />
-      <Route path='/thanh-toan' element={<Checkout />} />
-      <Route path='/ca-nhan' element={<HomePage />}>
-        <Route path='' element={<HomePage />} />
-        <Route path='thay-doi-thong-tin' element={<HomePage />} />
-      </Route>
-
       {/* Giao diện quản trị viên */}
-      <Route path='admin'>
-        <Route path='login' element={<h1>Login</h1>} />
-
+      {/* <Route path='admin' element={<AdminLayout />}>
         <Route path='thong-ke' element={<h1>Thống kê</h1>} />
 
         <Route path='danh-muc'>
@@ -56,6 +39,19 @@ function App() {
           <Route path='them' element={<h1>Thêm tài khoản</h1>} />
           <Route path='sua/:id' element={<h1>Sửa tài khoản</h1>} />
         </Route>
+      </Route> */}
+
+      {/* Giao diện người dùng */}
+      <Route path='/' element={<PublicLayout />}>
+        <Route index element={<Home />} />
+        <Route path='danh-muc/:slug' element={<AllProduct />} />
+        <Route path='san-pham/:slug' element={<Detail />} />
+        <Route path='gio-hang' element={<Cart />} />
+        <Route path='thanh-toan' element={<Checkout />} />
+        {/* <Route path='ca-nhan' element={<HomePage />}>
+          <Route path='' element={<HomePage />} />
+          <Route path='thay-doi-thong-tin' element={<HomePage />} />
+        </Route> */}
       </Route>
 
       <Route path='*' element={<h1>404 Not Found</h1>} />

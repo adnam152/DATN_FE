@@ -1,13 +1,13 @@
-
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
         <header className="flex justify-between items-center py-4 px-10 border-b border-gray-200 shadow-md bg-white">
             {/* Logo */}
-            <div className="text-3xl font-bold text-blue-500 font-cursive">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_TEUcWRoHNFFfGBXAJYlu_h6vigjQPbYj3K3efkMh-jTkjAA" alt="" style={{ height: '40px' }} />
+            <Link to='/'>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_TEUcWRoHNFFfGBXAJYlu_h6vigjQPbYj3K3efkMh-jTkjAA" className="h-10" />
+            </Link>
 
-            </div>
 
             {/* Thanh tìm kiếm */}
             <div className="flex items-center border border-gray-300 rounded-full px-4 py-2 w-1/3">
@@ -36,24 +36,27 @@ function Header() {
 
             {/* Icons */}
             <div className="flex items-center space-x-6">
+                {/* Wishlist */}
                 <div className="relative cursor-pointer hover:text-blue-500">
                     <i className="fas fa-heart text-xl"></i>
                     <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-1 " >
                         0
                     </span>
                 </div>
-                <div className="relative cursor-pointer hover:text-blue-500">
+                {/* Cart */}
+                <Link to='/gio-hang' className="relative cursor-pointer hover:text-blue-500">
                     <i className="fas fa-shopping-cart text-xl"></i>
                     <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-1">
                         2
                     </span>
-                </div>
+                </Link>
+                {/* Profile */}
                 <div className="cursor- hover:text-blue-500">
                     <i className="fas fa-user text-xl"></i>
                 </div>
             </div>
         </header>
     );
-};
+}
 
 export default Header;
