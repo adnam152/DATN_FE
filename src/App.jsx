@@ -7,6 +7,7 @@ import AllProduct from './public/pages/AllProduct/AllProduct';
 import Detail from './public/pages/Detail/Detail';
 import Cart from './public/pages/Cart/Cart';
 import Checkout from './public/pages/Checkout/Checkout';
+import BlogPage from './public/pages/BlogPage/Blogpage';
 import { useEffect } from 'react';
 import useAuthStore from './store/authStore';
 import authService from './services/authService';
@@ -67,6 +68,7 @@ function App() {
         <Route path='san-pham/:slug' element={<Detail />} />
         <Route path='gio-hang' element={<Cart />} />
         <Route path='thanh-toan' element={<Checkout />} />
+        <Route path='tin-tuc' element={<BlogPage />} />
         {/* <Route path='ca-nhan' element={<HomePage />}>
           <Route path='' element={<HomePage />} />
           <Route path='thay-doi-thong-tin' element={<HomePage />} />
