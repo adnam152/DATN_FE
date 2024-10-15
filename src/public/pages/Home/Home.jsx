@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
 import ListProduct from "../../components/ListProduct/ListProduct";
-import productService from "../../../services/productService";
+import { getProducts } from "../../../services/productService";
+
 
 function HomePage() {
     const [newProducts, setNewProducts] = useState([]);
     const [trendProducts, setTrendProducts] = useState([]);
-    const { getProducts } = productService();
-
     useEffect(() => {
         // Get new products
         getProducts()

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useProduct from "../../../hooks/useProduct.js"
 import { formatPrice } from "../../../utils/common.js"
 import './Detail.css';
+import { getOneProduct } from "../../../services/productService.js";
 
 function Detail() {
     const { slug } = useParams();
@@ -10,7 +10,7 @@ function Detail() {
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
-        useProduct().getOneProduct('').then(res => {
+        getOneProduct('').then(res => {
             console.log(res.data);
             setProduct(res.data)
         })
@@ -20,7 +20,7 @@ function Detail() {
         setQuantity(prevQuantity => prevQuantity + 1);
     };
 
-   
+
     const decreaseQuantity = () => {
         setQuantity(prevQuantity => prevQuantity > 1 ? prevQuantity - 1 : 1);
     };
@@ -104,7 +104,7 @@ function Detail() {
                             <select className="color-select text-black bg-[#F6F6F6] border my-[3px] rounded p-[10px_15px_10px_15px]">
                                 <option value="">Chọn màu</option>
                                 {product.attributes?.color?.map((color) => (
-                                    <option style={{ background: color}}  key={color} value={color} data-color={color}>
+                                    <option style={{ background: color }} key={color} value={color} data-color={color}>
                                         {color}
                                     </option>
                                 ))}
@@ -185,8 +185,8 @@ function Detail() {
                                 <p>Đánh giá</p>
                             </div>
 
-                          
-                          
+
+
                         </div>
 
 

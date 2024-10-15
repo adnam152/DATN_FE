@@ -68,11 +68,15 @@ function App() {
         <Route path='san-pham/:slug' element={<Detail />} />
         <Route path='gio-hang' element={<Cart />} />
         <Route path='thanh-toan' element={<Checkout />} />
-        <Route path='tin-tuc' element={<BlogPage />} />
-        {/* <Route path='ca-nhan' element={<HomePage />}>
-          <Route path='' element={<HomePage />} />
-          <Route path='thay-doi-thong-tin' element={<HomePage />} />
-        </Route> */}
+        <Route path='tin-tuc'>
+          <Route index element={<BlogPage />} />
+          <Route path=':slug' element={<BlogPage />} />
+        </Route>
+        <Route path='yeu-thich' element={<BlogPage />} />
+        <Route path='ca-nhan'>
+          <Route index element={<Home />} />
+          <Route path='thay-doi-thong-tin' element={<Home />} />
+        </Route>
       </Route>
 
       <Route path='*' element={<h1>404 Not Found</h1>} />

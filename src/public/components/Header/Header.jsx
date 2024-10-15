@@ -40,15 +40,15 @@ function Header() {
 
                 {/* Navbar */}
                 <nav className="flex items-center space-x-8">
-                    <a href="#" className="text-sm text-black font-semibold relative hover:text-red-500">
+                    <a href="/" className="text-sm text-black font-semibold relative hover:text-red-500">
                         Trang chủ
                         <span className="block w-full h-0.5 bg-red-500 rounded-full absolute -bottom-1 left-0 transition-transform transform scale-x-0 hover:scale-x-100"></span>
                     </a>
                     <a href="#" className="text-sm text-gray-600 hover:text-red-500">Quần áo</a>
                     <a href="#" className="text-sm text-gray-600 hover:text-red-500">Giày</a>
                     <a href="#" className="text-sm text-gray-600 hover:text-red-500">Phụ kiện</a>
-                    <a href="#" className="text-sm text-gray-600 hover:text-red-500">Tin tức</a>
-                    <a href="#" className="text-sm text-gray-600 hover:text-red-500">Về chúng tôi</a>
+                    <a href="/tin-tuc" className="text-sm text-gray-600 hover:text-red-500">Tin tức</a>
+                    <a href="/ve-chung-toi" className="text-sm text-gray-600 hover:text-red-500">Về chúng tôi</a>
                 </nav>
 
                 {/* Icons */}
