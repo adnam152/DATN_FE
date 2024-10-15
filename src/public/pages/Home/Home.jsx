@@ -21,6 +21,8 @@ function HomePage() {
         getProducts()
             .then(response => {
                 setTrendProducts(response.data);
+                console.log(data);
+                
             })
             .catch(error => {
                 console.error(error);
@@ -31,6 +33,7 @@ function HomePage() {
         <>
             {/* New arrival */}
             <ListProduct products={newProducts} />
+            
 
             {/* Trending */}
             <ListProduct products={trendProducts} />

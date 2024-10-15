@@ -1,0 +1,9 @@
+.color-select option::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border: 1px solid #000;
+    background-color: attr(data-color);
+}
