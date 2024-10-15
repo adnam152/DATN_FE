@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function ProductItem() {
+function ProductItem({product}) {
   return (
     <Link to='/san-pham/1' className="me-7 mb-7 rounded-lg p-4 w-60 h-max shadow-sm hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
       <div className=" product-img relative">
