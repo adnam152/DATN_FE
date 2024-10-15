@@ -5,7 +5,7 @@ import axios from "axios";
 const apiProducts = "http://localhost:3000/products";
 const apiDetails = "http://localhost:3000/product_details";
 
-export default function useProduct() {
+export default function productService() {
     const getProducts = async (params = '') => {
         try {
             const response = await axios.get(apiProducts + params);
