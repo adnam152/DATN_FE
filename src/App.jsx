@@ -7,8 +7,27 @@ import AllProduct from './public/pages/AllProduct/AllProduct';
 import Detail from './public/pages/Detail/Detail';
 import Cart from './public/pages/Cart/Cart';
 import Checkout from './public/pages/Checkout/Checkout';
+import { useEffect } from 'react';
+import useAuthStore from './store/authStore';
+import authService from './services/authService';
 
 function App() {
+  const { getUser } = authService();
+  const setAuthUser = useAuthStore(state => state.setAuthUser);
+
+  // Check login when app start
+  useEffect(() => {
+    async function checkLogin() {
+      try {
+        const res = await getUser();
+        const user = res.data;
+        user && setAuthUser(user);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    checkLogin();
+  }, []);
 
   return (
     <Routes>
