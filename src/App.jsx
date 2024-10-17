@@ -11,6 +11,7 @@ import BlogPage from './public/pages/BlogPage/Blogpage';
 import { useEffect } from 'react';
 import useAuthStore from './store/authStore';
 import authService from './services/authService';
+import Whishlist from './public/pages/Whishlist/Whishlist';
 
 function App() {
   const { getUser } = authService();
@@ -72,7 +73,7 @@ function App() {
           <Route index element={<BlogPage />} />
           <Route path=':slug' element={<BlogPage />} />
         </Route>
-        <Route path='yeu-thich' element={<BlogPage />} />
+        <Route path='yeu-thich' element={<Whishlist />} />
         <Route path='ca-nhan'>
           <Route index element={<Home />} />
           <Route path='thay-doi-thong-tin' element={<Home />} />
