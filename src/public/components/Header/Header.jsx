@@ -1,12 +1,17 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import useAuthStore from "../../../store/authStore";
+import useAuthStore from "../../../store/useAuthStore";
 import AuthForm from "../AuthForm/AuthForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { logout } from "../../../services/authService";
+import useLoaderStore from "../../../store/useLoaderStore";
 
 function Header() {
     const authUser = useAuthStore(state => state.authUser);
+    const setAuthUser = useAuthStore(state => state.setAuthUser);
     const [isShowAuthModal, setIsShowAuthModal] = useState(false);
+    const setLoading = useLoaderStore(state => state.setLoading);
 
     const onShowAuthModal = () => {
         console.log('Show auth modal');
@@ -16,6 +21,25 @@ function Header() {
         console.log('Close auth modal');
         setIsShowAuthModal(false);
     }
+    const onLogout = async () => {
+        setLoading(true);
+        try {
+            const res = await logout();            
+            if (res?.message) {
+                setAuthUser(null);
+                toast.success(res.message);
+            }
+        } catch (error) {
+            toast.error(error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    // Sau khi đăng nhập, đóng modal
+    useEffect(() => {
+        if (authUser) setIsShowAuthModal(false);
+    }, [authUser])
 
     return (
         <>
@@ -68,19 +92,19 @@ function Header() {
                         </span>
                     </Link>
                     {/* Profile */}
-                    {authUser ? <ProfileBtn /> : <LoginBtn onShowAuthModal={onShowAuthModal} />}
+                    {authUser ? <ProfileBtn onLogout={onLogout} authUser={authUser} /> : <LoginBtn onShowAuthModal={onShowAuthModal} />}
                 </div>
             </header>
 
             {/* Modal */}
             {isShowAuthModal && (
-            <div
-                className="fixed top-0 left-0 right-0 bottom-0 flex items-center z-40"
-                style={{ background: "#000000a6" }}
-                onClick={onCloseAuthModal}
-            >
-                <AuthForm />
-            </div>) }
+                <div
+                    className="fixed top-0 left-0 right-0 bottom-0 flex items-center z-40"
+                    style={{ background: "#000000a6" }}
+                    onClick={onCloseAuthModal}
+                >
+                    <AuthForm />
+                </div>)}
         </>
     );
 }
@@ -93,21 +117,26 @@ function LoginBtn({ onShowAuthModal }) {
         </button>
     )
 }
-function ProfileBtn() {
+function ProfileBtn({ onLogout, authUser }) {
     return (
         <button className="dropdown dropdown-end">
             <div tabIndex="0" role="button">
-                <img src="https://a0.anyrgb.com/pngimg/1236/14/no-facial-features-no-avatar-no-eyes-expressionless-avatar-icon-delayering-avatar-user-avatar-men-head-portrait-thumbnail.png" className="w-6 h-6 object-contain rounded-full" alt="" />
+                <img
+                    src={authUser.avatar}
+                    className="w-6 h-6 object-contain rounded-full" alt=""
+                />
             </div>
             <ul tabIndex="0" className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                <li>
-                    <Link to={'/ca-nhan'}>Trang quản lý</Link>
-                </li>
+                {authUser.role === 1 && (
+                    <li>
+                        <Link to={'/ca-nhan'}>Trang quản lý</Link>
+                    </li>
+                )}
                 <li>
                     <Link to={'/'}>Cá nhân</Link>
                 </li>
                 <hr />
-                <li><p>Đăng xuất</p></li>
+                <li onClick={onLogout}><p>Đăng xuất</p></li>
             </ul>
         </button>
     )
