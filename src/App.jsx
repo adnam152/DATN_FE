@@ -14,6 +14,7 @@ import { checkLogin } from './services/authService';
 import axios from 'axios';
 import { PulseLoader } from 'react-spinners';
 import useLoaderStore from './store/useLoaderStore';
+import Whishlist from './public/pages/Whishlist/Whishlist';
 
 function App() {
   const setAuthUser = useAuthStore(state => state.setAuthUser);
@@ -84,7 +85,7 @@ function App() {
             <Route index element={<BlogPage />} />
             <Route path=':slug' element={<BlogPage />} />
           </Route>
-          <Route path='yeu-thich' element={<BlogPage />} />
+          <Route path='yeu-thich' element={<Whishlist />} />
           <Route path='ca-nhan'>
             <Route index element={<Home />} />
             <Route path='thay-doi-thong-tin' element={<Home />} />
