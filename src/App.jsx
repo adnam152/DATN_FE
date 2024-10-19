@@ -8,6 +8,7 @@ import Detail from './public/pages/Detail/Detail';
 import Cart from './public/pages/Cart/Cart';
 import Checkout from './public/pages/Checkout/Checkout';
 import BlogPage from './public/pages/BlogPage/Blogpage';
+import Profile from './public/pages/Profile/Profile';
 import { useEffect } from 'react';
 import useAuthStore from './store/authStore';
 import authService from './services/authService';
@@ -71,11 +72,11 @@ function App() {
         <Route path='tin-tuc'>
           <Route index element={<BlogPage />} />
           <Route path=':slug' element={<BlogPage />} />
-        </Route>
+        </Route>  
         <Route path='yeu-thich' element={<BlogPage />} />
         <Route path='ca-nhan'>
           <Route index element={<Home />} />
-          <Route path='thay-doi-thong-tin' element={<Home />} />
+          <Route path='thay-doi-thong-tin' element={<Profile />} />
         </Route>
       </Route>
 
