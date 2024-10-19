@@ -11,6 +11,7 @@ import BlogPage from './public/pages/BlogPage/Blogpage';
 import { useEffect } from 'react';
 import useAuthStore from './store/authStore';
 import authService from './services/authService';
+import AboutPage from './public/pages/AboutPage/Aboutpage';
 
 function App() {
   const { getUser } = authService();
@@ -70,7 +71,7 @@ function App() {
         <Route path='thanh-toan' element={<Checkout />} />
         <Route path='tin-tuc'>
           <Route index element={<BlogPage />} />
-          <Route path=':slug' element={<BlogPage />} />
+          <Route path=':slug' element={<AboutPage />} />
         </Route>
         <Route path='yeu-thich' element={<BlogPage />} />
         <Route path='ca-nhan'>
