@@ -1,28 +1,55 @@
-const api = 'http://localhost:3000/accounts';
+import axios from "axios";
 
-export default function authService() {
-    const login = async (phoneNumber, password) => {
-        console.log(phoneNumber, password);
-        try {
-            const response = await fetch(`${api}`);
-            const data = await response.json();
-            console.log(data);
-        } catch (error) {
-            console.log(error);
+/* eslint-disable no-unused-vars */
+
+const login = async (payload) => {
+    try {
+        const response = await axios.post(`/auth/login`, payload);
+        if (response.status === 200) {
+            return response.data;
         }
-    };
+    } 
+    catch (error) {
+        if (error.response) return error.response.data;
+        return { message: 'Không thể kết nối với server, vui lòng thử lại.' };
+    }
+};
 
-    const register = async (data) => {
+const register = async (payload) => {
+    try {
+        const response = await axios.post(`/auth/register`, payload);
+        if(response.status === 201) return response.data;
+    }
+    catch (error) {
+        if(error.response) return error.response.data;
+        return { message: 'Không thể kết nối với server, vui lòng thử lại.' };
+    }
+};
 
-    };
+const logout = async () => {
+    try {
+        const response = await axios.post(`/auth/logout`);
+        if (response.status === 204) return {message: 'Đăng xuất thành công'};
+    }
+    catch (error) {
+        if (error.response) {
+            return error.response.data;
+        }
+        return { message: 'Không thể kết nối với server, vui lòng thử lại.' }; // Trả về thông báo lỗi chung
+    }
+};
 
-    const logout = async () => {
+const checkLogin = async () => {
+    try {
+        const response = await axios.post(`/auth/check`);
+        if (response.status === 200) {
+            return response.data;
+        }
+    } 
+    catch (error) {
+        if (error.response) return error.response.data;
+        return { message: 'Không thể kết nối với server, vui lòng thử lại.' };
+    }
+};
 
-    };
-
-    const getUser = async () => {
-
-    };
-
-    return { login, register, logout, getUser }
-}
+export { login, register, logout, checkLogin }
