@@ -15,6 +15,7 @@ import axios from 'axios';
 import { PulseLoader } from 'react-spinners';
 import useLoaderStore from './store/useLoaderStore';
 import Whishlist from './public/pages/Whishlist/Whishlist';
+import Policy from './public/pages/Policy/Policy';
 
 function App() {
   const setAuthUser = useAuthStore(state => state.setAuthUser);
@@ -73,7 +74,6 @@ function App() {
           <Route path='sua/:id' element={<h1>Sửa tài khoản</h1>} />
         </Route>
       </Route> */}
-
         {/* Giao diện người dùng */}
         <Route path='/' element={<PublicLayout />}>
           <Route index element={<Home />} />
@@ -86,6 +86,7 @@ function App() {
             <Route path=':slug' element={<BlogPage />} />
           </Route>
           <Route path='yeu-thich' element={<Whishlist />} />
+          <Route path='chinh-sach' element={<Policy />} />
           <Route path='ca-nhan'>
             <Route index element={<Home />} />
             <Route path='thay-doi-thong-tin' element={<Home />} />
