@@ -1,10 +1,11 @@
+
 function Profile() {
     return (
         <>
-            <div className="container border bg-[#EEF0FC] w-[1440px] mx-auto ">
-                <div className="container w-[1340px] my-[30px] mx-[50px] flex gril-cols-2">
+            <div className="container border bg-[#EEF0FC]   ">
+                <div className="container w-[1340px]  mx-auto my-[30px] mx-[50px] flex gril-cols-2">
                     {/* Box 1 */}
-                    <div className="w-[450px] bg-white rounded-lg shadow-md p-4 text-center mr-5">
+                    <div className="w-[450px]  rounded-lg shadow-md p-4 text-center mr-5">
                         <div className="flex justify-end text-black  mb-2 rounded-lg items-center">
                             <i className="fa-solid fa-pen pr-2"></i>
                             <p>Edit</p>
@@ -45,21 +46,12 @@ function Profile() {
                     {/* Box  2*/}
 
                     <div className="pl-[23px] border-l">
-                        <div className="   bg-[#EEF0FC]">
-                            <div role="tablist" className="tabs bg-white rounded-lg shadow-md  mt-[10px] mb-[20px] ">
-                                {/* Nút Chi tiết */}
-                                <input
-                                    type="radio"
-                                    name="my_tabs_2"
-                                    role="tab"
-                                    className="tab cursor-pointer py-1 px-6 min-w-[140px] ml-[20px] mt-[10px] font-bold  bg-white text-[#3771C8]   text-lg  rounded-lg hover:bg-gray-100 "
-                                    aria-label="Đơn hàng"
-                                    defaultChecked
-                                />
-                                <div role="tabpanel" className="tab-content rounded-b-lg shadow-md py-1 ">
-                                    <div className=" w-[800px] ml-[10px] mr-[30px] mb-[30px] rounded-b-lg shadow-md  ">
-
-                                        <table className="w-full bg-white  rounded-lg  ">
+                       
+                            <div role="tablist" className="tabs tabs-lifted bg-[#EEF0FC]">
+                                <input style={{ width: '140px', backgroundColor: '#EEF0FC' }} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Tab 1" />
+                                <div role="tabpanel" className="tab-content   rounded-box  bg-[#EEF0FC] p-[24px-48px-24px-0px] ">
+                                    <div className="w-[830px] border mt-[10px]  bg-[#F9FAFB]  rounded-lg ">
+                                        <table className="w-[790px] mb-[30px] ml-[20px]  rounded-lg  ">
                                             <thead className="">
                                                 <tr className=" border-b py-[10px]">
                                                     <th className="text-left text-[black] py-3  pl-2">Mã đơn hàng</th>
@@ -69,67 +61,88 @@ function Profile() {
                                                     <th className="text-right text-[black] py-3 pr-2">Số tiền</th>
                                                 </tr>
                                             </thead>
-                                            <tbody className="bg-white  rounded-lg mb-5 ">
+                                            <tbody className="   bg-white  shadow-md  ">
                                                 <tr className="border-b">
                                                     <td className="py-3  text-[black] pl-2">#556666</td>
                                                     <td className="py-3  text-[black]">Thanh toán khi nhận hàng</td>
                                                     <td className="py-3  text-[black]">29/9/2024</td>
-                                                    <td className="py-3 text-[black] text-center rounded-b-lg">
+                                                    <td className="py-3 text-[black] text-center ">
                                                         <span className="bg-[#FFF6F6] font-bold text-red-500 rounded-lg px-4 py-1 ">Đang chờ</span></td>
                                                     <td className="text-right py-3  text-[black] pr-2">350.000đ</td>
                                                 </tr>
-                                                <tr className="border-b mb-5">
+                                                <tr className="border-b ">
                                                     <td className="py-3  text-[black]  pl-2">#556633</td>
                                                     <td className="py-3  text-[black]">Thanh toán khi nhận hàng</td>
                                                     <td className="py-3  text-[black]">28/9/2024</td>
-                                                    <td className="py-3  text-[black] text-center rounded-b-lg">
+                                                    <td className="py-3  text-[black] text-center ">
                                                         <span className="bg-[#F1F7FF] font-bold text-blue-500 rounded-lg px-4 py-1 ">Đang giao</span></td>
                                                     <td className="text-right py-3  text-[black] pr-2">200.000đ</td>
                                                 </tr>
-                                                <tr className="border-b mb-5">
+                                                <tr className="border-b ">
                                                     <td className="py-3  text-[black]  pl-2">#556633</td>
                                                     <td className="py-3  text-[black]">Thanh toán khi nhận hàng</td>
                                                     <td className="py-3  text-[black]">28/9/2024</td>
-                                                    <td className="py-3  text-[black] text-center rounded-b-lg">
+                                                    <td className="py-3  text-[black] text-center ">
                                                         <span className="bg-[#EAFFF0] font-bold text-green-500 rounded-lg px-4 py-1">Đa giao</span></td>
                                                     <td className="text-right py-3  text-[black] pr-2">200.000đ</td>
                                                 </tr>
-                                                <tr className=" mb-5">
+                                                <tr className=" mb-15">
                                                     <td className="py-3  text-[black]  pl-2">#556633</td>
                                                     <td className="py-3  text-[black]">Thanh toán khi nhận hàng</td>
                                                     <td className="py-3  text-[black]">28/9/2024</td>
-                                                    <td className="py-3  text-[black] text-center rounded-b-lg">
+                                                    <td className="py-3  text-[black] text-center ">
                                                         <span className="bg-[#F1F7FF] font-bold text-blue-500 rounded-lg px-4 py-1">Đang giao</span></td>
                                                     <td className="text-right py-3  text-[black] pr-2">200.000đ</td>
                                                 </tr>
-
                                             </tbody>
                                         </table>
-
-
-
                                     </div>
                                 </div>
-
-                                {/* Nút Đánh giá */}
                                 <input
+                                    style={{ width: '140px', backgroundColor: '#EEF0FC' }}
                                     type="radio"
                                     name="my_tabs_2"
                                     role="tab"
-                                    className="tab cursor-pointer py-1 px-6 min-w-[140px] mt-[10px]  bg-white text-black font-semibold text-lg   rounded-lg hover:bg-gray-100 "
-                                    aria-label="Đánh giá"
-                                />
-                                <div role="tabpanel" className="tab-content bg-white   rounded-b-lg p-6 hidden">
-                                    <td className="py-3  text-[black] text-center "><span className="text-[#00AB8A] rounded px-[18px] py-[4px] bg-[gray]">Đã giao</span></td>
-                                </div>
+                                    className="tab"
+                                    aria-label="Tab 2"
+                                    defaultChecked />
+                                    <div role="tabpanel" className="tab-content bg-[##EEF0FC]  rounded-box p-[24px-48px-24px-0px]">
+                                        <div className="w-[830px] mt-[10px] border bg-[#F9FAFB]  rounded-lg ">
+                                            <table className="w-[790px] mb-[30px] ml-[20px] rounded-lg  ">
+                                                <thead className="">
+                                                    <tr className=" border-b py-[10px]">
+                                                        <th className="text-left text-[black] py-3  pl-2">Mã đơn hàng</th>
+                                                        <th className="text-left text-[black] py-3">Đánh giá</th>
+                                                        <th className="text-left text-[black] py-3">Nội dung </th>
+                                                        <th className="text-left text-[black] py-3">Ngày đanh giá</th>
 
+                                                    </tr>
+                                                </thead>
+                                                <tbody style={{ borderRadius: '30px' }} className=" bg-white border shadow-md ">
+                                                    <tr className="border-b">
+                                                        <td className="py-3  text-[black] pl-2">#556666</td>
+                                                        <td className="py-3  text-[black]">Thanh toán khi nhận hàng</td>
+                                                        <td className="py-3  text-[black]">29/9/2024</td>
+                                                        <td className="py-3 text-[black] text-center ">
+                                                            <span className="bg-[#FFF6F6] font-bold text-red-500 rounded-lg px-4 py-1 ">Đang chờ</span></td>
 
+                                                    </tr>
+                                                    <tr className="border-b ">
+                                                        <td className="py-3  text-[black]  pl-2">#556633</td>
+                                                        <td className="py-3  text-[black]">Thanh toán khi nhận hàng</td>
+                                                        <td className="py-3  text-[black]">28/9/2024</td>
+                                                        <td className="py-3  text-[black] text-center ">
+                                                            <span className="bg-[#F1F7FF] font-bold text-blue-500 rounded-lg px-4 py-1 ">Đang giao</span></td>
+                                                    </tr>
 
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
                             </div>
-                        </div>
+                        
                     </div>
-
-
                 </div>
             </div>
         </>
