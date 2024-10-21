@@ -254,7 +254,7 @@ function RegisterForm({ onChangeForm, setLoading, isLoading }) {
           errorMessage={inputEl.error.confirmPasswordError}
         />
 
-        <p className="text-sm text-center px-3 italic mt-4">Bằng cách ấn <span className="font-semibold">Đăng ký</span>, bạn đã đồng ý với <span className="text-blue-600 underline">chính sách và điều khoản của chúng tôi.</span></p>
+        <p className="text-sm text-center px-3 italic mt-4">Bằng cách ấn <span className="font-semibold">Đăng ký</span>, bạn đã đồng ý với <Link to='chinh-sach' className="text-blue-600 underline">chính sách và điều khoản của chúng tôi.</Link></p>
         {/* Button */}
         <button
           className="mt-4 w-full p-2 text-white text-center bg-[#445279] rounded-lg btn-animation"

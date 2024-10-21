@@ -78,12 +78,12 @@ function Header() {
                 {/* Icons */}
                 <div className="flex items-center space-x-6">
                     {/* Wishlist */}
-                    <div className="relative cursor-pointer hover:text-blue-500">
+                    <Link to='/yeu-thich' className="relative cursor-pointer hover:text-blue-500">
                         <i className="fas fa-heart text-xl"></i>
                         <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs rounded-full px-1 " >
                             0
                         </span>
-                    </div>
+                    </Link>
                     {/* Cart */}
                     <Link to='/gio-hang' className="relative cursor-pointer hover:text-blue-500">
                         <i className="fas fa-shopping-cart text-xl"></i>
