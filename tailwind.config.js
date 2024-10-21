@@ -12,7 +12,12 @@ export default {
       colors:{
         'custom-red':'#F33535',
         'light-gray':'#F6F6F6',
-        'custom-cyan':'#E0EFFB'
+        'custom-cyan':'#E0EFFB',
+        'custom-black':'#00163A',
+        'violet-gray':'#EEF0FC',
+      },
+      borderRadius:{
+        '4xl':'30px'
       }
     },
   },
