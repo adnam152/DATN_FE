@@ -77,8 +77,10 @@ function App() {
         {/* Giao diện người dùng */}
         <Route path='/' element={<PublicLayout />}>
           <Route index element={<Home />} />
-          <Route path='danh-muc/:slug' element={<AllProduct />} />
-          <Route path='san-pham/:slug' element={<Detail />} />
+          <Route path='san-pham'>
+            <Route index element={<AllProduct />}></Route>
+            <Route path=':slug' element={<Detail />} />
+          </Route>
           <Route path='gio-hang' element={<Cart />} />
           <Route path='thanh-toan' element={<Checkout />} />
           <Route path='tin-tuc'>

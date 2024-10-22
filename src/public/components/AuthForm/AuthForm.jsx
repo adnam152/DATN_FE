@@ -52,7 +52,7 @@ const checkValidate = (inputEl, dispatch) => {
   return isValid;
 }
 
-function AuthForm() {
+function AuthForm({onCloseAuthModal}) {
   const [isLoginForm, setIsLoginForm] = useState(true);
   const authFormRef = useRef(null);
   const authImageRef = useRef(null);
@@ -82,7 +82,7 @@ function AuthForm() {
       <div className="w-[400px] px-12 relative left-0 transition-all duration-300" ref={authFormRef}>
         {isLoginForm ?
           <LoginForm onChangeForm={onChangeForm} setLoading={setLoading} isLoading={isLoading} /> :
-          <RegisterForm onChangeForm={onChangeForm} setLoading={setLoading} isLoading={isLoading} />
+          <RegisterForm onChangeForm={onChangeForm} setLoading={setLoading} isLoading={isLoading} onCloseAuthModal={onCloseAuthModal}/>
         }
       </div>
 
@@ -186,7 +186,7 @@ function LoginForm({ onChangeForm, setLoading, isLoading }) {
   )
 }
 
-function RegisterForm({ onChangeForm, setLoading, isLoading }) {
+function RegisterForm({ onChangeForm, setLoading, isLoading, onCloseAuthModal }) {
   const [inputEl, dispatch] = useReducer(reducer, {
     value: { full_name: '', phone_number: '', password: '', confirm_password: '' },
     error: { nameError: '', phoneError: '', passwordError: '', confirmPasswordError: '' }
@@ -254,7 +254,12 @@ function RegisterForm({ onChangeForm, setLoading, isLoading }) {
           errorMessage={inputEl.error.confirmPasswordError}
         />
 
-        <p className="text-sm text-center px-3 italic mt-4">Bằng cách ấn <span className="font-semibold">Đăng ký</span>, bạn đã đồng ý với <Link to='chinh-sach' className="text-blue-600 underline">chính sách và điều khoản của chúng tôi.</Link></p>
+        <p className="text-sm text-center px-3 italic mt-4">
+          <span>Bằng cách ấn </span>
+          <span className="font-semibold">Đăng ký</span>
+          <span>, bạn đã đồng ý với </span>
+          <Link to='chinh-sach' onClick={()=>onCloseAuthModal()} className="text-blue-600 underline">chính sách và điều khoản của chúng tôi.</Link>
+          </p>
         {/* Button */}
         <button
           className="mt-4 w-full p-2 text-white text-center bg-[#445279] rounded-lg btn-animation"
