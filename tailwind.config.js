@@ -8,6 +8,7 @@ export default {
     extend: {
       width: {
         '128': '32rem',
+        '45':'49%'
       },
       colors:{
         'custom-red':'#F33535',
