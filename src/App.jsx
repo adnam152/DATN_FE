@@ -9,6 +9,9 @@ import Cart from './public/pages/Cart/Cart';
 import Checkout from './public/pages/Checkout/Checkout';
 import BlogPage from './public/pages/BlogPage/Blogpage';
 import { useEffect } from 'react';
+import useAuthStore from './store/authStore';
+import authService from './services/authService';
+import AboutPage from './public/pages/AboutPage/Aboutpage';
 import useAuthStore from './store/useAuthStore';
 import { checkLogin } from './services/authService';
 import axios from 'axios';
@@ -74,6 +77,19 @@ function App() {
           <Route path='sua/:id' element={<h1>Sửa tài khoản</h1>} />
         </Route>
       </Route> */}
+      {/* Giao diện người dùng */}
+      <Route path='/' element={<PublicLayout />}>
+        <Route index element={<Home />} />
+        <Route path='danh-muc/:slug' element={<AllProduct />} />
+        <Route path='san-pham/:slug' element={<Detail />} />
+        <Route path='gio-hang' element={<Cart />} />
+        <Route path='thanh-toan' element={<Checkout />} />
+        <Route path='tin-tuc'>
+          <Route index element={<BlogPage />} />
+          <Route path=':slug' element={<AboutPage />} />
+        </Route>
+        <Route path='yeu-thich' element={<BlogPage />} />
+        <Route path='ca-nhan'>
         {/* Giao diện người dùng */}
         <Route path='/' element={<PublicLayout />}>
           <Route index element={<Home />} />
