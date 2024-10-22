@@ -35,7 +35,7 @@ const logout = async () => {
         if (error.response) {
             return error.response.data;
         }
-        return { message: 'Không thể kết nối với server, vui lòng thử lại.' }; // Trả về thông báo lỗi chung
+        return { message: 'Không thể kết nối với server, vui lòng thử lại.' };
     }
 };
 

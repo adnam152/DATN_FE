@@ -94,7 +94,7 @@ const Cart = () => {
     return (
         <>
             <div className="bg-blue-50 p-12">
-                <div className="container min-h-screen mx-auto" style={{ boxShadow: "10px 10px 15px rgba(0, 0, 0, 0.15)" }}>
+                <div className="container min-h-screen mx-auto rounded" style={{ boxShadow: "10px 10px 15px rgba(0, 0, 0, 0.15)" }}>
                     <div className="flex">
                         <div className="flex-1">
                             <CartList />

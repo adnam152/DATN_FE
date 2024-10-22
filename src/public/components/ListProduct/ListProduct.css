@@ -1,0 +1,14 @@
+.wishlist-btn {
+    background: #f6f6f6;
+    color: black;
+}
+
+.wishlist-btn:hover {
+    background: red;
+    color: white;
+}
+
+.wishlist-btn.active {
+    background: red;
+    color: white;
+}

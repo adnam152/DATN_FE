@@ -9,16 +9,23 @@ import Cart from './public/pages/Cart/Cart';
 import Checkout from './public/pages/Checkout/Checkout';
 import BlogPage from './public/pages/BlogPage/Blogpage';
 import { useEffect } from 'react';
-import useAuthStore from './store/authStore';
-import authService from './services/authService';
-import AboutPage from './public/pages/AboutPage/Aboutpage';
 import useAuthStore from './store/useAuthStore';
 import { checkLogin } from './services/authService';
 import axios from 'axios';
 import { PulseLoader } from 'react-spinners';
 import useLoaderStore from './store/useLoaderStore';
-import Whishlist from './public/pages/Whishlist/Whishlist';
+import Wishlist from './public/pages/Wishlist/Wishlist';
 import Policy from './public/pages/Policy/Policy';
+import AboutPage from './public/pages/AboutPage/AboutPage';
+
+window.formatPrice = function (price) {
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(price);
+}
+window.confirmDelete = function (callback) {
+  if (window.confirm('Bạn có chắc chắn muốn xóa?')) {
+    callback();
+  }
+}
 
 function App() {
   const setAuthUser = useAuthStore(state => state.setAuthUser);
@@ -77,19 +84,6 @@ function App() {
           <Route path='sua/:id' element={<h1>Sửa tài khoản</h1>} />
         </Route>
       </Route> */}
-      {/* Giao diện người dùng */}
-      <Route path='/' element={<PublicLayout />}>
-        <Route index element={<Home />} />
-        <Route path='danh-muc/:slug' element={<AllProduct />} />
-        <Route path='san-pham/:slug' element={<Detail />} />
-        <Route path='gio-hang' element={<Cart />} />
-        <Route path='thanh-toan' element={<Checkout />} />
-        <Route path='tin-tuc'>
-          <Route index element={<BlogPage />} />
-          <Route path=':slug' element={<AboutPage />} />
-        </Route>
-        <Route path='yeu-thich' element={<BlogPage />} />
-        <Route path='ca-nhan'>
         {/* Giao diện người dùng */}
         <Route path='/' element={<PublicLayout />}>
           <Route index element={<Home />} />
@@ -103,8 +97,9 @@ function App() {
             <Route index element={<BlogPage />} />
             <Route path=':slug' element={<BlogPage />} />
           </Route>
-          <Route path='yeu-thich' element={<Whishlist />} />
+          <Route path='yeu-thich' element={<Wishlist />} />
           <Route path='chinh-sach' element={<Policy />} />
+          <Route path='ve-chung-toi' element={<AboutPage />} />
           <Route path='ca-nhan'>
             <Route index element={<Home />} />
             <Route path='thay-doi-thong-tin' element={<Home />} />

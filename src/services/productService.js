@@ -25,4 +25,5 @@ const getOneProduct = async (slug = 'product-1') => {
     }
 }
 
+
 export { getOneProduct, getProducts };
