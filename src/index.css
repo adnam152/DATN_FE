@@ -7,8 +7,12 @@
     src: url(../public/Tuffy-Regular.ttf);
 }
 
+.font-tuffy {
+    font-family: tuffy;
+}
+
 .btn-animation {
-    transition: all .2s ease-in-out;
+    transition: transform .2s ease-in-out;
 }
 
 .btn-animation:hover {

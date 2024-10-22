@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./AuthForm.css"
 import { useReducer, useRef, useState } from "react";
 import { toast } from "react-toastify";
+import { login, register } from "../../../services/authService";
+import useAuthStore from "../../../store/useAuthStore";
+import useLoaderStore from "../../../store/useLoaderStore";
 
 const reducer = (state, action) => {
   function getError(type, value) {
@@ -49,10 +52,12 @@ const checkValidate = (inputEl, dispatch) => {
   return isValid;
 }
 
-function AuthForm() {
-  const [isLogin, setIsLogin] = useState(true);
+function AuthForm({onCloseAuthModal}) {
+  const [isLoginForm, setIsLoginForm] = useState(true);
   const authFormRef = useRef(null);
   const authImageRef = useRef(null);
+  const isLoading = useLoaderStore(state => state.isLoading);
+  const setLoading = useLoaderStore(state => state.setLoading);
 
   // Event handler
   const onStopPropagation = (e) => {
@@ -60,7 +65,7 @@ function AuthForm() {
   }
 
   const onChangeForm = () => {
-    setIsLogin(!isLogin);
+    setIsLoginForm(!isLoginForm);
     authFormRef.current.classList.toggle('left-0');
     authFormRef.current.classList.toggle(`left-[455px]`);
     authImageRef.current.classList.toggle('left-0');
@@ -75,7 +80,10 @@ function AuthForm() {
     >
       {/* Form */}
       <div className="w-[400px] px-12 relative left-0 transition-all duration-300" ref={authFormRef}>
-        {isLogin ? <LoginForm onChangeForm={onChangeForm} /> : <RegisterForm onChangeForm={onChangeForm} />}
+        {isLoginForm ?
+          <LoginForm onChangeForm={onChangeForm} setLoading={setLoading} isLoading={isLoading} /> :
+          <RegisterForm onChangeForm={onChangeForm} setLoading={setLoading} isLoading={isLoading} onCloseAuthModal={onCloseAuthModal}/>
+        }
       </div>
 
       <img
@@ -105,24 +113,38 @@ function InputGroup({ type, name, placeholder, value, onChange, errorMessage, ic
   )
 }
 
-function LoginForm({ onChangeForm }) {
+function LoginForm({ onChangeForm, setLoading, isLoading }) {
   const [inputEl, dispatch] = useReducer(reducer, {
     value: { phone_number: '', password: '' },
     error: { phoneError: '', passwordError: '' },
   });
+  const setAuthUser = useAuthStore(state => state.setAuthUser);
 
   // Event handler
-  const onLogin = (event) => {
+  const onLogin = async (event) => {
     event.preventDefault();
+    if (isLoading) return;
     if (!checkValidate(inputEl, dispatch)) {
       toast.error('Thông tin đăng nhập không hợp lệ');
       return;
     }
 
     // Xử lý đăng nhập
-    console.group('Login');
-    console.log('Input:', inputEl);
-    console.groupEnd();
+    const payload = inputEl.value;
+    setLoading(true);
+    try {
+      const res = await login(payload);
+      if (res?.data) {
+        toast.success(res.message);
+        setAuthUser(res.data);
+      } else {
+        toast.error(res.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -164,21 +186,35 @@ function LoginForm({ onChangeForm }) {
   )
 }
 
-function RegisterForm({ onChangeForm }) {
+function RegisterForm({ onChangeForm, setLoading, isLoading, onCloseAuthModal }) {
   const [inputEl, dispatch] = useReducer(reducer, {
     value: { full_name: '', phone_number: '', password: '', confirm_password: '' },
     error: { nameError: '', phoneError: '', passwordError: '', confirmPasswordError: '' }
   });
+  const setAuthUser = useAuthStore(state => state.setAuthUser);
 
   // Event handler
-  const onRegister = (event) => {
+  const onRegister = async (event) => {
     event.preventDefault();
+    if (isLoading) return;
     if (!checkValidate(inputEl, dispatch)) return toast.error('Thông tin đăng ký không hợp lệ');
 
     // Xử lý đăng ký
-    console.group('Register');
-    console.log('Input:', inputEl);
-    console.groupEnd();
+    const payload = inputEl.value;
+    setLoading(true);
+    try {
+      const res = await register(payload);
+      if (res?.data) {
+        toast.success(res.message);
+        setAuthUser(res.data);
+      } else {
+        toast.error(res.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -218,7 +254,12 @@ function RegisterForm({ onChangeForm }) {
           errorMessage={inputEl.error.confirmPasswordError}
         />
 
-        <p className="text-sm text-center px-3 italic mt-4">Bằng cách ấn <span className="font-semibold">Đăng ký</span>, bạn đã đồng ý với <span className="text-blue-600 underline">chính sách và điều khoản của chúng tôi.</span></p>
+        <p className="text-sm text-center px-3 italic mt-4">
+          <span>Bằng cách ấn </span>
+          <span className="font-semibold">Đăng ký</span>
+          <span>, bạn đã đồng ý với </span>
+          <Link to='chinh-sach' onClick={()=>onCloseAuthModal()} className="text-blue-600 underline">chính sách và điều khoản của chúng tôi.</Link>
+          </p>
         {/* Button */}
         <button
           className="mt-4 w-full p-2 text-white text-center bg-[#445279] rounded-lg btn-animation"
