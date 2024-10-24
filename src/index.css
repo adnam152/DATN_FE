@@ -7,6 +7,10 @@
     src: url(../public/Tuffy-Regular.ttf);
 }
 
+*{
+    scroll-behavior: smooth;
+}
+
 .font-tuffy {
     font-family: tuffy;
 }

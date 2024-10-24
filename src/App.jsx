@@ -34,6 +34,7 @@ function App() {
 
   // config axios
   axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
+  axios.defaults.headers.post['Accept'] = 'application/json';
   axios.defaults.withCredentials = true;
 
   // Check login when app start
@@ -45,8 +46,7 @@ function App() {
         setAuthUser(res.data);
       } catch (error) {
         console.log(error);
-      }
-      finally {
+      } finally {
         setLoading(false);
       }
     }

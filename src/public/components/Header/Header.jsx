@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../../../store/useAuthStore";
 import AuthForm from "../AuthForm/AuthForm";
 import { useEffect, useState } from "react";
@@ -27,7 +27,7 @@ function Header() {
         { name: 'Puma', slug: 'puma' },
         { name: 'Converse', slug: 'converse' },
         { name: 'New Balance', slug: 'new-balance' },
-        { name: 'Jordan', slug : 'jordan' },
+        { name: 'Jordan', slug: 'jordan' },
     ]
 
     // Event handler
@@ -140,16 +140,7 @@ function Menu({ catalogues, brands }) {
 
     return (
         <>
-            <div className="flex items-center border border-gray-300 rounded-full px-4 py-2 w-96">
-                <input
-                    type="text"
-                    placeholder="Tìm sản phẩm..."
-                    className="outline-none text-gray-600 text-sm w-full px-2"
-                />
-                <button className="ml-2 text-gray-600">
-                    <i className="fas fa-search"></i>
-                </button>
-            </div>
+            <Search />
             <div className="px-1 flex gap-3">
                 <div className="dropdown" onMouseEnter={() => setIsHover(true)} onMouseLeave={() => setIsHover(false)}>
                     <Link to='/san-pham'>
@@ -194,5 +185,33 @@ function Menu({ catalogues, brands }) {
     )
 }
 
+function Search() {
+    const [search, setSearch] = useState('');
+    const navigate = useNavigate();
+
+    // Event handler
+    const onSubmitForm = (e) => {
+        e.preventDefault();
+        if (search.trim() === '') return;
+        const newUrl = `/san-pham?search=${search.toString()}`;
+        navigate(newUrl);
+        setSearch('');
+    }
+
+    return (
+        <form onSubmit={onSubmitForm} className="flex items-center border border-gray-300 rounded-full px-4 py-2 w-96">
+            <input
+                type="text"
+                placeholder="Tìm sản phẩm..."
+                className="outline-none text-gray-600 text-sm w-full px-2"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+            />
+            <button type="submit" className="ml-2 text-gray-600">
+                <i className="fas fa-search"></i>
+            </button>
+        </form>
+    )
+}
 
 export default Header;
