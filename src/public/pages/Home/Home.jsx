@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
 import ListProduct from "../../components/ListProduct/ListProduct";
-import useProduct from "../../../hooks/useProduct";
+import { getProducts } from "../../../services/productService";
+
 
 function HomePage() {
     const [newProducts, setNewProducts] = useState([]);
     const [trendProducts, setTrendProducts] = useState([]);
-    const { getProducts } = useProduct();
-
     useEffect(() => {
         // Get new products
         getProducts()
@@ -21,6 +20,8 @@ function HomePage() {
         getProducts()
             .then(response => {
                 setTrendProducts(response.data);
+                console.log(data);
+                
             })
             .catch(error => {
                 console.error(error);

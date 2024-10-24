@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: tuffy;
+    src: url(../public/Tuffy-Regular.ttf);
+}
+
+*{
+    scroll-behavior: smooth;
+}
+
+.font-tuffy {
+    font-family: tuffy;
+}
+
+.btn-animation {
+    transition: transform .2s ease-in-out;
+}
+
+.btn-animation:hover {
+    transform: translateY(-3px);
+}
+
+.btn-animation:active {
+    transform: translateY(0);
+}
